@@ -20,5 +20,6 @@ from promocao_api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('promocao/', views.promocao_list)
+    path('promocao/', views.promocao_list),
+    path('promocao/<int:id>', views.promocao_detail)
 ]

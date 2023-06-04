@@ -17,3 +17,25 @@ def promocao_list(request, format=None):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+@api_view(['GET', 'PUT', 'DELETE'])
+def promocao_detail(request, id, format=None):
+    
+    try:
+        promocao = Promocao.objects.get(pk=id)
+    except Promocao.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    
+    if request.method == 'GET':
+        serializer = PromocaoSerializer(promocao)
+        return Response(serializer.data)
+    
+    elif request.method == 'PUT':
+        serializer = Promocao(promocao, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+    
+    elif request.method == 'DELETE':
+        promocao.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
