@@ -31,7 +31,7 @@ def promocao_detail(request, id, format=None):
         return Response(serializer.data)
     
     elif request.method == 'PUT':
-        serializer = Promocao(promocao, data=request.data)
+        serializer = PromocaoSerializer(promocao, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
