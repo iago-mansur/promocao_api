@@ -3,4 +3,4 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 
-router.register('api', EmpresaViewSet)
+router.register('empresas', EmpresaViewSet)

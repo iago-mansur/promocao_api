@@ -27,8 +27,7 @@ class Loja(models.Model):
 
 class Promocao(models.Model):
     nome = models.CharField(max_length=200)
-    empresa = models.ForeignKey('Empresa', on_delete=models.CASCADE) #, related_name="empresa")
-    loja = models.ForeignKey('Loja', on_delete=models.CASCADE) #, related_name="loja")
+    loja = models.ForeignKey('Loja', on_delete=models.CASCADE) #    , related_name="loja")
 
     class Meta:
         verbose_name = 'Promoção'
