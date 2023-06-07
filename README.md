@@ -30,11 +30,9 @@ cd promocao_api
 
 python --version
 
------commit: 75b82ca96b1e65764cc37f21a36b64877c5232d4---
 python3 -m venv .venv
 
 . .venv/bin/activate
---------------------------------------------------------
 
 pip install django
 
@@ -48,19 +46,9 @@ http://127.0.0.1:8000/
 
 CONTROL-C
 
-git init
+django-admin startapp api_promocao
 
-git config user.name iago-mansur
-
-git config user.email iagoma@gmail.com
-
-git add .
-
-git commit -m "inicializando promocao_api"
-
-git branch -M main
-
-code .
+pip freeze > requirements.txt
 
 python manage.py migrate
 
@@ -68,43 +56,35 @@ python manage.py createsuperuser
 
 admin / email@email.com / 123456 / y
 
-criar models.py
-
-CONTROL-S
-
 atualizar settings.py
 
-python manage.py makemigrations promocao_api
+atualizar  model.py
+
+atualizar admin.py
+
+python manage.py makemigrations
 
 python manage.py migrate
 
-criar admin.py	
-
-CONTROL-S
-
-CONTROL-C
-
 python manage.py runserver
-
-git add .
-
-git commit -m "criacao do modelo de promocao_api"
 
 criar serializer.py
-CONTROL-S
 
 criar views.py
-CONTROL-S
 
-atualizar settings.py
-CONTROL-S
-
-atualizar urls.py
-CONTROL-S
+editar urls.py
 
 python manage.py migrate
 
 python manage.py runserver
+
+>Select Interpreter
+
+Recommended
+
+
+
+
 
 git add .
 
