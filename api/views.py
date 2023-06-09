@@ -1,18 +1,24 @@
 from django.shortcuts import render
-
-from django.http import JsonResponse
-# from .models import Promocao, Empresa, Loja
-from .models import Empresa
-from .serializers import EmpresaSerializer
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework.response import Response
-from rest_framework import status, viewsets
+from .models import Promocao, Empresa, Loja
+from .serializers import EmpresaSerializer, LojaSerializer, PromocaoSerializer
+from rest_framework.permissions import AllowAny
+from rest_framework import viewsets
 
 class EmpresaViewSet(viewsets.ModelViewSet):
     queryset = Empresa.objects.all()
     serializer_class = EmpresaSerializer
     permission_classes = (AllowAny,)
+
+class LojaViewSet(viewsets.ModelViewSet):
+    queryset = Loja.objects.all()
+    serializer_class = LojaSerializer
+    permission_classes = (AllowAny,)
+
+class PromocaoViewSet(viewsets.ModelViewSet):
+    queryset = Promocao.objects.all()
+    serializer_class = PromocaoSerializer
+    permission_classes = (AllowAny,)
+
 
 """
 class UserProgramViewset(viewsets.ModelViewSet):

@@ -22,8 +22,6 @@ from .router import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('promocao/', views.promocao_list),
-    # path('promocao/<int:id>', views.promocao_detail)
     path('api/', include(router.urls))
 ]
 

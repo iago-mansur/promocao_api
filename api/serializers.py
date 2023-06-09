@@ -1,12 +1,24 @@
 from rest_framework import serializers
 from .models import Promocao, Empresa, Loja
 
-"""serializers.HyperlinkedModelSerializer para trabalha com relacionamentos"""
+"""serializers.HyperlinkedModelSerializer para trabalhar com relacionamentos"""
 class EmpresaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Empresa
         fields = ['id', 'nome']
+
+class LojaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Loja
+        fields = ['id', 'nome', 'endereco', 'empresa']
+
+class PromocaoSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Promocao
+        fields = ['id', 'nome', 'loja']
 
 # class LojaSerializer(serializers.ModelSerializer):
     

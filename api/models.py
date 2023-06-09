@@ -1,6 +1,6 @@
 from django.db import models
 
-"""Empresa pode ter várias lojas"""
+
 class Empresa(models.Model):
     nome = models.CharField(max_length=200)
 
@@ -11,12 +11,10 @@ class Empresa(models.Model):
     def __str__(self):
         return self.nome
 
-
-"""Lojas podem ter várias promoções"""
 class Loja(models.Model):
     nome = models.CharField(max_length=200)
     endereco = models.CharField(max_length=500)
-    empresa = models.ForeignKey('Empresa', on_delete=models.CASCADE) #, related_name="empresa")
+    empresa = models.ForeignKey('Empresa', on_delete=models.CASCADE, related_name="empresa")
 
     class Meta:
         verbose_name = 'Loja'
@@ -27,7 +25,7 @@ class Loja(models.Model):
 
 class Promocao(models.Model):
     nome = models.CharField(max_length=200)
-    loja = models.ForeignKey('Loja', on_delete=models.CASCADE) #    , related_name="loja")
+    loja = models.ForeignKey('Loja', on_delete=models.CASCADE, related_name="loja")
 
     class Meta:
         verbose_name = 'Promoção'

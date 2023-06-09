@@ -72,6 +72,8 @@ criar serializer.py
 
 criar views.py
 
+criar router.py
+
 editar urls.py
 
 python manage.py migrate
