@@ -6,4 +6,4 @@ admin.site.register(Empresa)
 
 @admin.register(Promocao)
 class PromocaoAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'empresa', 'loja')
+    list_display = ('nome', 'loja')
