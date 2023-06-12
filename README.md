@@ -46,7 +46,7 @@ http://127.0.0.1:8000/
 
 CONTROL-C
 
-django-admin startapp api_promocao
+django-admin startapp api
 
 pip freeze > requirements.txt
 
@@ -83,57 +83,3 @@ python manage.py runserver
 >Select Interpreter
 
 Recommended
-
-
-
-
-
-git add .
-
-git commit -m "teste lista de objetos da promocao_api"
-
-editar views.py
-CONTROL-S
-
-editar urls.py
-CONTROL-S
-
-python manage.py migrate
-
-python manage.py runserver
-
-git add .
-
-git commit -m "lista detalhada de objetos da promocao_api"
-
-editar urls.py
-
-git add .
-
-git commit -m "add format_suffix_patterns"
-
-python3 -m venv .venv
-
-. .venv/bin/activate
-
-pip install django
-
-pip install djangorestframework
-
-CRTL + SHIFT + P
-
->Select Interpreter
-
-Recommended
-
-git add .
-
-git commit -m "Insert venv"
-
-Editar views.py
-
-pip freeze > requirements.txt
-
-git add .
-
-git commit -m "Fix PUT."
