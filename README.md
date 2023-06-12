@@ -7,20 +7,9 @@ git clone https://github.com/iago-mansur/promocao_api.git
 
 cd promocao_api
 
-code .
+docker-compose up -d
 
-python3 -m venv .venv
-
-. .venv/bin/activate
-
-pip install -r requirements.txt
-
-python manage.py makemigrations promocao_api 
-
-python manage.py migrate
-
-python manage.py runserver
-
+http://127.0.0.1:8000/
 
 ==================Desenvolvimento========================
 
@@ -83,3 +72,5 @@ python manage.py runserver
 >Select Interpreter
 
 Recommended
+
+editar requirements.txt
